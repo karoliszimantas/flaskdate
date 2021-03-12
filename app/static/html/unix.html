@@ -1,0 +1,66 @@
+{%extends "layout_time.html" %}
+{% block content %}
+<h1 style="text-align:center">UNIX</h1>
+<p style="text-align:center">UNIX</p>
+
+<h1 style="text-align:center">Unix date</h1>
+<p style="text-align:center">Please select date format. If there is no specific date element, please leave blank drop down list</p>
+
+<form name="my_form" method="post">
+      <select id="year_entry" name="year">
+          <option disabled selected value> -- select an option -- </option>
+          <option value="y">year with century as a decimal number, e.g. 00, 01, ..., 99</option>
+          <option value="-y">year without century as a decimal number., e.g. 0, 1, ..., 99, 99</option>
+          <option value="Y">year with century as a decimal number, e.g. 2013, 2019 etc.</option>
+      </select>
+      <select id="month_entry" name="month">
+          <option disabled selected value> -- select an option -- </option>
+          <option value="m">month as a zero-padded decimal number, e.g. 01, 02, ..., 12</option>
+          <option value="-m">month as a decimal number, e.g. 1, 2, ..., 12</option>
+      </select>
+      <select id="day_entry" name="day">
+          <option disabled selected value> -- select an option -- </option>
+          <option value="d">day of the month as a zero-padded decimal, e.g. 01, 02, ..., 31</option>
+          <option value="-d">day of the month as a decimal number, e.g. 1, 2, ..., 30</option>
+      </select>
+      <select id="hour_entry" name="hour">
+          <option disabled selected value> -- select an option -- </option>
+          <option value="H">for hour (24-hour clock) as a zero-padded decimal number, e.g. 00, 01, ..., 23</option>
+          <option value="-H">for hour (24-hour clock) as a decimal number, e.g. 0, 1, ..., 23</option>
+      </select>
+      <select id="minute_entry" name="minute">
+          <option disabled selected value> -- select an option -- </option>
+          <option value="M">for minute as a zero-padded decimal number, e.g. 00, 01, ..., 23</option>
+          <option value="-M">for minute as a decimal number, e.g. 0, 1, ..., 59</option>
+      </select>
+      <select id="date_entry" name="second">
+          <option disabled selected value> -- select an option -- </option>
+          <option value="S">for second as a zero-padded decimal number, e.g. 00, 01, ..., 23</option>
+          <option value="-S">for second as a decimal number, e.g. 0, 1, ..., 59</option>
+      </select>
+
+      <div>
+          <label style="text-align:center" for="punc_date">Please enter punctuation mark which separates years month and days</label>
+          <input name="punc_date" id="punc_date">
+      </div>
+      <div>
+          <label style="text-align:center" for="punc_hour">Please enter punctuation mark which separates hours minutes and days</label>
+          <input name="punc_hour" id="punc_hour">
+      </div>
+      <div>
+          <label style="text-align:center" for="miliseconds">Can not convert miliseconds if it exceeds 6 digits. Please enter how many digits exceeds 6 digit miliseconds, e.g. 6.857468746 in this case 3 digits exceeds 6 number miliseconds</label>
+          <input name="miliseconds" id="miliseconds">
+      </div>
+      <select name="column" id="column">
+          {% for col in df.columns %}
+            <option value="{{col}}">{{col}}</option>
+          {% endfor %}
+      </select>
+      <p>
+        <input type="submit" name="" value="go">
+      </p>
+</form>
+
+
+
+{% endblock content %}

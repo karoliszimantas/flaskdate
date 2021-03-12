@@ -1,0 +1,29 @@
+{%extends "layout_columns.html" %}
+
+{% block content %}
+
+<h1>Merge columns</h1>
+<form name="my_form" method="post">
+      Column 1:<select name="column1">
+          {% for col in df.columns %}
+            <option value="{{col}}">{{col}}</option>
+          {% endfor %}
+      </select>
+
+      <input name="punct" placeholder="Enter punctuation mark">
+
+      Column 2:<select name="column2">
+          {% for col in df.columns %}
+            <option value="{{col}}">{{col}}</option>
+          {% endfor %}
+      </select>
+
+
+    <p>
+     <input name="name" placeholder="Enter name of new column">
+    </p>
+    <p>
+        <input type="submit" name="" value="Merge">
+    </p>
+</form>
+{% endblock content %}

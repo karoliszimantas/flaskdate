@@ -1,0 +1,21 @@
+{%extends "layout_columns.html" %}
+
+{% block content %}
+<div class="container">
+  <form action="/all_columns">
+    <button class="btn btn1">Print all rows</button>
+  </form>
+  <form action="/frows">
+    <button class="btn btn1">Print first 5 values</button>
+  </form>
+  <form action="/lrows">
+    <button class="btn btn1">Print last 5 values</button>
+  </form>
+  <form action="/merge">
+    <button class="btn btn1">Merge columns</button>
+  </form>
+
+</div>
+
+
+{% endblock %}

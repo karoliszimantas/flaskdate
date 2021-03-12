@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% if title %}
+        <title>{{ title }}</title>
+    {% else %}
+        <title>CSV</title>
+    {% endif %}
+    <style>
+        ul {list-style: none;
+            backgorund: #663366;
+            padding: 0;
+            margin: 0;
+            text-align: center
+        }
+        li {display: inline-block;
+        }
+        a {text-decoration: none;
+           color: DarkBlue;
+           width: 100px;
+           display: block;
+           padding: 25px 20px;
+           font-size:15px;
+           text-transform: uppercase;
+           font-weight: bold;
+           font-align: center
+        }
+        body {
+        margin: 0;
+        padding:0;
+        }
+        .container{
+        text-align:center;
+        margin-top: 360 px;
+        }
+        .btn{
+        border: 1px solid #3498db;
+        background: none;
+        padding: 10px 20 px;
+        font-size: 20px;
+        font-family: "montserrat";
+        cursor: pointer;
+        margin: 10px;
+        }
+
+    </style>
+</head>
+<body>
+<h1>{{ heading }}</h1>
+<div class="navbar">
+    <ul>
+        <li><a href="/">Upload new file</a> </li>
+        <li><a href="/columns">Back to columns</a> </li>
+        <li><a href="/menu">Back to main menu</a> </li>
+    </ul>
+</div>
+ {% block content %} {% endblock %}
+</body>
+</html>

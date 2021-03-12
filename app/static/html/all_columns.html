@@ -1,0 +1,11 @@
+{%extends "layout_columns.html" %}
+
+{% block content %}
+
+{% for col in df.columns %}
+<ol>
+  <li>{{col}}</li>
+</ol>
+{% endfor %}
+
+{% endblock content %}
